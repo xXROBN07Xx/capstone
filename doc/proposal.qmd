@@ -47,6 +47,24 @@ Objectives:
 * Save raw data for recovery and experimentation
 
 # Research Questions and Methodology
+Questions:
+1. **Are there any trends in response times over the years for specific MPDS codes?**
+**Plan**: Filter rows to get observations without missing values. Then group by year and MPDS code to calculate the average response time for each group. Need to plot codes with data in more than one year. The top few most frequent MPDS codes will be graphed. The result will be a time series line graph with year on the x-axis, avg response time on the y-axis, and the MPDS codes as color coded lines.
+
+2. **How does the change from initial to final MPDS codes affect the time it takes to arrive at the Hospital?**
+**Plan**: Count the number of times the response time in a dataframe has a value and the time to hospital is NULL.  Create a new column to indicate if there was a change from the intial to final MPDS Codes. Group the changes and no changes, then calculate the average of each group and get the average of the time to hospital for each group. The bar gragh will have change or no change on the x-axis and the average time for each on the y-axis. Get the percentage of change.
+
+3.  **Is there a relationship between the time to get on scene and the time to get to the hospital?**
+**Plan**: Drop all the rows where the times have missing values. Subtract the time to get to hospital with the time to get on scene to get time difference. Then drop all rows with negative numbers since that doesnt apply to this data. Then find outliers and analyze it with the describe() function. If there are outliers, I'll try capping it at the 99th percentile. I'll make a scatterplot or bubbleplot. The a-axis is the time to get on scene and the y-axis is the time to the hospital.
+
+4. **How frequent are the calls by determination code across different community types?**
+**Plan**: Grouping the data by community type and determination code. Count the number of calls for each group combination. The create a bubbleplot with community type on the x-axis, determination code on the y-axis, and the frequency of the MPDS codes as the color and size.
+
+5.  **How does the time to get to hospital vary across different types of communities?**
+**Plan**: Filter out null and negative times. Then make boxplots with community type on the x-axis and the time on the y-axis.
+
+
+
 
 Questions:
 
