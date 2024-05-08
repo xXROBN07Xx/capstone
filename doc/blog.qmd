@@ -283,7 +283,7 @@ random.seed()
 data = ambulance_raw
 # simulation parameters
 num_simulations = random.randint(2, 5)
-num_ambulances = random.randint(6, 15)
+num_ambulances = random.randint(20, 50)
 max_response_time = random.randint(8, 20)  # minutes
 print(num_simulations, num_ambulances, max_response_time)
 # objective function for optimization
