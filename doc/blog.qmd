@@ -133,6 +133,7 @@ plt.tight_layout()
 plt.show()
 ```
 Rural, Remote, and No-station areas have a fairly consistent amount of calls annually. The less people, the less things change over time. 
+
 ## Decoding the Incident: 
 The nature of the call and its assigned priority can greatly affect response times. I examine the variety of call types and their associated response times, and explore the relationship between initial and final call codes. Sometimes, the initial assessment of an emergency might differ from the final diagnosis. I also assess the impact of changes to the Resource Allocation Plan on call prioritization.
 ```{python}
@@ -290,7 +291,8 @@ plt.tight_layout()
 plt.show()
 ```
 The bar plots indicates that amount of calls are going up over the years which aligns with @F4. The response time for Echo calls, which are the most urgent ones, generally on average always have faster response times proportionally than the overall amount of calls combined.
-## Simulation and Optimization
+
+## Simulation and Optimization:
 By developing a simulation model, I tested various resource allocation and ambulance placement methods to identify the most effective approaches. This allows for exploration of different scenarios and assessments of their impact on response times. Parameters were set up for the number of simulations and ambulances, along with a maximum acceptable response time. Through an objective function, it then simulates various scenarios where the distribution of ambulances between different community settings is altered to discover the optimum allocation that minimizes average response time while penalizing instances exceeding the maximum allowed response time. This function repeatedly samples from different community segments of the data according to predefined numbers of allocated ambulances. It computes average times and penalties over multiple iterations to produce a measurable objective value. Using this function, an optimization routine seeks out the best possible division of ambulances between these community types under constraints ensuring total ambulance count remains constant. The optimized results determine how many ambulances should be designated to each area type, which theoretically leads to balanced responsiveness across geographies. For the histogram, a wider spread indicates more variability in response times, which could suggest inconsistency in service delivery. Overlapping areas in the histogram could indicate similarities between different community types.
 ```{python}
 #| label: F14
@@ -545,5 +547,6 @@ plt.title('Feature Importance in Predicting Time to Hosptial(XGBoost)')
 plt.show()
 ```
 I also implemented XGBoost which should be slightly better than the original gradient boosting model. The r-squared values is around 0.53 at random_state = 42. The result supported the original model that response time was is the most important features, with community type following along.
+
 ## Conclusion:
 Following the implementation of the revised resource allocation plan, BCEHS continued to transform and improve its services. This included increasing the number of paramedics and ambulances and introducing a new dispatch approach aimed at shortening response times for patients who need care most. Post-2014, there was a noted need for improved coordination of access to emergency health services with fire departments. This was identified as a key area where performance could be enhanced to ensure more effective emergency responses. BCEHS also recognized the need to evaluate its advanced care coverage across the province to determine whether it was sufficiently meeting the needs of patients, especially in rural and remote communities. This evaluation was part of an ongoing effort to ensure equitable access to emergency medical services throughout British Columbia. Recently, there was a reconstitution of the BCEHS board of directors to focus solely on ambulance services, with direct accountability to the Minister of Health. There was an appointment of a new chief ambulance officer responsible for the day-to-day management of the BC Ambulance Service. Funding for 85 new full-time paramedics, 30 full-time dispatchers, 22 new ambulances, and converting 22 rural ambulance stations to 24/7 ALPHA stations. In October 2021, 22 ambulance stations were converted from on-call paramedic staffing to 24/7 stations with 8 full-time paramedics. Also in 2021, there was expanded first responder capabilities that increased the care that first responders can provide, including additional diagnostic testing and administering epinephrine for life-threatening allergic reactions.
